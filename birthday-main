@@ -345,7 +345,7 @@
                     this.x, this.y, this.size * this.glowFactor
                 );
                 
-                glow.addColorStop(0, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity})`);
+                glow.addColorStop(0, rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity}));
                 glow.addColorStop(1, 'rgba(255, 255, 255, 0)');
                 
                 starCtx.fillStyle = glow;
@@ -353,7 +353,7 @@
                 starCtx.arc(this.x, this.y, this.size * this.glowFactor, 0, Math.PI * 2);
                 starCtx.fill();
                 
-                starCtx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity})`;
+                starCtx.fillStyle = rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity});
                 starCtx.beginPath();
                 starCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 starCtx.fill();
@@ -413,8 +413,8 @@
                 
                 // Fill with gradient
                 const gradient = petalsCtx.createLinearGradient(0, 0, 0, -this.size);
-                gradient.addColorStop(0, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity})`);
-                gradient.addColorStop(1, `rgba(${this.color.r - 30}, ${this.color.g}, ${this.color.b + 20}, ${this.opacity * 0.7})`);
+                gradient.addColorStop(0, rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity}));
+                gradient.addColorStop(1, rgba(${this.color.r - 30}, ${this.color.g}, ${this.color.b + 20}, ${this.opacity * 0.7}));
                 petalsCtx.fillStyle = gradient;
                 petalsCtx.fill();
                 
@@ -455,7 +455,7 @@
             draw() {
                 fireworksCtx.beginPath();
                 fireworksCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                fireworksCtx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity})`;
+                fireworksCtx.fillStyle = rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity});
                 fireworksCtx.fill();
                 
                 // Add glow effect
@@ -464,7 +464,7 @@
                     this.x, this.y, this.radius * 4
                 );
                 
-                glow.addColorStop(0, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity * 0.7})`);
+                glow.addColorStop(0, rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.opacity * 0.7}));
                 glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
                 
                 fireworksCtx.fillStyle = glow;
@@ -571,13 +571,13 @@
                     for (let i = 0; i < this.trail.length; i++) {
                         fireworksCtx.beginPath();
                         fireworksCtx.arc(this.trail[i].x, this.trail[i].y, 2, 0, Math.PI * 2);
-                        fireworksCtx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.trail[i].opacity})`;
+                        fireworksCtx.fillStyle = rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.trail[i].opacity});
                         fireworksCtx.fill();
                     }
                     
                     fireworksCtx.beginPath();
                     fireworksCtx.arc(this.x, this.y, 3, 0, Math.PI * 2);
-                    fireworksCtx.fillStyle = `rgb(${this.color.r}, ${this.color.g}, ${this.color.b})`;
+                    fireworksCtx.fillStyle = rgb(${this.color.r}, ${this.color.g}, ${this.color.b});
                     fireworksCtx.fill();
                 } else {
                     for (let i = 0; i < this.particles.length; i++) {
@@ -665,13 +665,13 @@
                     for (let i = 0; i < this.trail.length; i++) {
                         fireworksCtx.beginPath();
                         fireworksCtx.arc(this.trail[i].x, this.trail[i].y, 2, 0, Math.PI * 2);
-                        fireworksCtx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.trail[i].opacity})`;
+                        fireworksCtx.fillStyle = rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${this.trail[i].opacity});
                         fireworksCtx.fill();
                     }
                     
                     fireworksCtx.beginPath();
                     fireworksCtx.arc(this.x, this.y, 3, 0, Math.PI * 2);
-                    fireworksCtx.fillStyle = `rgb(${this.color.r}, ${this.color.g}, ${this.color.b})`;
+                    fireworksCtx.fillStyle = rgb(${this.color.r}, ${this.color.g}, ${this.color.b});
                     fireworksCtx.fill();
                 } else {
                     for (let i = 0; i < this.particles.length; i++) {
@@ -709,8 +709,8 @@
         function addFloatingHeart() {
             const heart = document.createElement('div');
             heart.className = 'heart';
-            heart.style.left = `${Math.random() * 90 + 5}%`;
-            heart.style.top = `${Math.random() * 90 + 5}%`;
+            heart.style.left = ${Math.random() * 90 + 5}%;
+            heart.style.top = ${Math.random() * 90 + 5}%;
             heart.innerHTML = `
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" 
